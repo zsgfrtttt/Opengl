@@ -4,6 +4,7 @@ import android.opengl.GLSurfaceView
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.csz.opengl.render.AirHockeyRender
+import com.csz.opengl.render.AirHockeyRenderV2
 import com.csz.opengl.render.FirstRender
 import com.csz.opengl.util.OpenglUtil
 
@@ -28,7 +29,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun airHockeyRender(){
-        glSurfaceView.setRenderer(AirHockeyRender(this))
+        glSurfaceView.setRenderer(AirHockeyRenderV2(this))
     }
 
     override fun onResume() {

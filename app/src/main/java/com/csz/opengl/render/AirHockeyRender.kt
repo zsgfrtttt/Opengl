@@ -36,7 +36,7 @@ class AirHockeyRender(context: Context) : GLSurfaceView.Renderer {
 
     val BYTE_REF_FLOAT = 4 // 1float = 4byte
     val PSITION_COMPONENT_COUNT =2 //每个顶点有两个分量
-    val tablePoints = floatArrayOf(
+   /** val tablePoints = floatArrayOf(
         0f, 0f,
         9f, 14f,
         0f, 14f,
@@ -50,6 +50,21 @@ class AirHockeyRender(context: Context) : GLSurfaceView.Renderer {
 
         4.5f, 2f,
         4.5f, 12f,
+    ) **/
+    val tablePoints = floatArrayOf(
+        -0.5f,-0.5f,
+        0.5f, 0.5f,
+        -0.5f, 0.5f,
+
+        -0.5f, -0.5f,
+        0.5f, -0.5f,
+        0.5f, 0.5f,
+
+        -0.5f,0f,
+        0.5f, 0f,
+
+        0f, -0.35f,
+        0f, 0.35f,
     )
     var vertexData: FloatBuffer
     var vertexCode: String
@@ -101,9 +116,9 @@ class AirHockeyRender(context: Context) : GLSurfaceView.Renderer {
         GLES20.glDrawArrays(GLES20.GL_LINES,6,2)
 
         GLES20.glUniform4f(uColorLocation,0f,0f,1f,1f)
-        GLES20.glDrawArrays(GLES20.GL_LINES,8,1)
+        GLES20.glDrawArrays(GLES20.GL_POINTS,8,1)
 
         GLES20.glUniform4f(uColorLocation,1f,0f,0f,1f)
-        GLES20.glDrawArrays(GLES20.GL_LINES,9,1)
+        GLES20.glDrawArrays(GLES20.GL_POINTS,9,1)
     }
 }
